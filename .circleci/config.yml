@@ -18,8 +18,8 @@ jobs:
       - checkout
       - run:
         working_directory: server
-        command: npm install
-        command: npm test
+        npm install
+        npm test
 
 
 workflows:
