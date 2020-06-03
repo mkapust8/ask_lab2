@@ -9,8 +9,8 @@ jobs:
       - checkout
       - run: 
         working_directory: client
-        command: npm install
-        command: npm test
+        npm install
+        npm test
   serwer:
     executor:
       name: node/default
