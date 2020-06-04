@@ -22,7 +22,7 @@ jobs:
       - checkout
       - run:
         command: npm install
-       working_directory: ./server
+        working_directory: ./server
       - run: 
         command: npm test
         working_directory: ./server
