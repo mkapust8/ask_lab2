@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
   docker: circleci/docker@1.2.1
-  node: circleci/node@2.1.0
+  node: circleci/node@3.0.0
 jobs:
   
   klient:
@@ -14,7 +14,7 @@ jobs:
       - run: 
         working_directory: client
       - node/install
-      - npm run test
+      - npm test
   serwer:
     executor:
       name: docker/docker
