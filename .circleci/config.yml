@@ -33,7 +33,7 @@ jobs:
             docker build ./server -t mkapust8/node-svr:1.0
             docker push mkapust8/node-svr:1.0
       - run: |
-            echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
+            echo "$DOCKER_PASS" | docker login --usernamert $DOCKER_USER --password-stdin
             docker build ./client -t mkapust8/react-client:1.0
             docker push mkapust8/react-client:1.0
 
