@@ -44,6 +44,6 @@ workflows:
       - serwer
       - klient
       - publikacja:
-        requires:
-        - serwer
-        - klient
+          requires:
+            - serwer
+            - klient
