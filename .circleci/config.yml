@@ -8,10 +8,10 @@ jobs:
       name: docker/docker
     docker:
       - image: circleci/node:10.16.3
+    working_directory: client
     steps:
       - checkout
       - run: 
-        working_directory: client
         node/install
         npm test
   serwer:
