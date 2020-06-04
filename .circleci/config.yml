@@ -11,11 +11,11 @@ jobs:
     steps:
       - checkout
       - run: 
-        command: npm install
-        working_directory: ./client
+          command: npm install
+          working_directory: ./client
       - run: 
-        command: npm test
-        working_directory: ./client
+          command: npm test
+          working_directory: ./client
   serwer:
     executor: node
     steps:
