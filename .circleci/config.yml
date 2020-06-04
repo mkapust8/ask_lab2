@@ -28,14 +28,16 @@ jobs:
     machine: true
     steps:
       - checkout
-      - run: |
-          echo "$DOCKER_PASS" | docker login -u $DOCKER_USER --password-stdin
-          docker build ./server -t mkapust8/node-svr:1.0
-          docker push mkapust8/node-svr:1.0
-      - run: |
-          echo "$DOCKER_PASS" | docker login -u $DOCKER_USER --password-stdin
-          docker build ./client -t mkapust8/react-client:1.0
-          docker push mkapust8/react-client:1.0
+      - run: 
+          command: |
+            echo "$DOCKER_PASS" | docker login -u $DOCKER_USER --password-stdin
+            docker build ./server -t mkapust8/node-svr:1.0
+            docker push mkapust8/node-svr:1.0
+      - run: 
+          command: |
+            echo "$DOCKER_PASS" | docker login -u $DOCKER_USER --password-stdin
+            docker build ./client -t mkapust8/react-client:1.0
+            docker push mkapust8/react-client:1.0
 
 
 workflows:
