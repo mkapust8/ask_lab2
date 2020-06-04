@@ -29,7 +29,6 @@ jobs:
 
 
 workflows:
-  version: 2
   test:
     jobs:
       - serwer
