@@ -30,7 +30,7 @@ jobs:
       - checkout
       - run: 
           command: |
-            echo "$DO CKER_PASS" | docker login -u $DOCKER_USER --password-stdin
+            echo "$DOCKER_PASS" | docker login -u $DOCKER_USER --password-stdin
             docker build ./server -t mkapust8/node-svr:1.0
             docker push mkapust8/node-svr:1.0
       - run: 
