@@ -41,9 +41,22 @@ jobs:
 workflows:
   test:
     jobs:
-      - serwer
-      - klient
+      - serwer:
+          filters:
+            branches:
+              only:
+              - master
+      - klient:
+          filters:
+            branches:
+              only:
+              - master
       - publikacja:
           requires:
             - serwer
             - klient
+          filters:
+            branches:
+              only:
+              - master
+          
