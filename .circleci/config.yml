@@ -24,6 +24,18 @@ jobs:
       - run: 
           command: npm test
           working_directory: ./server
+  publikacja:
+    machine: true
+    steps:
+      - checkout
+      - run: |
+          echo "$DOCKER_PASS" | docker login -u $DOCKER_USER --password-stdin
+          docker build ./server -t mkapust8/node-svr:latest
+          docker push mkapust8/node-svr:latest
+      - run: |
+          echo "$DOCKER_PASS" | docker login -u $DOCKER_USER --password-stdin
+          docker build ./client -t mkapust8/react-client:latest
+          docker push mkapust8/react-client:latest
 
 
 workflows:
@@ -31,3 +43,4 @@ workflows:
     jobs:
       - serwer
       - klient
+      - publikacja
