@@ -12,7 +12,7 @@ jobs:
       - checkout
       - run: 
         working_directory: client
-      - node/install
+      - npm install
       - npm test
   serwer:
     executor:
@@ -23,7 +23,7 @@ jobs:
       - checkout
       - run:
         working_directory: server
-      - node/install
+      - npm install
       - npm test
 
 
