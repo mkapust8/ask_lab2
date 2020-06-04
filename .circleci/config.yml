@@ -7,7 +7,8 @@ executors:
   
 jobs:
   klient:
-    executor: node
+    executor: 
+    name: node
     steps:
       - checkout
       - run: 
@@ -17,7 +18,8 @@ jobs:
           command: npm test
           working_directory: ./client
   serwer:
-    executor: node
+    executor: 
+    name: node
     steps:
       - checkout
       - run:
