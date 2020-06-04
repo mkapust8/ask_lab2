@@ -33,7 +33,8 @@ jobs:
 
 
 workflows:
-    test:
-      jobs:
-        - klient
-        - serwer
+  versions: 2
+  test:
+    jobs:
+      - klient
+      - serwer
