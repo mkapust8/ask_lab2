@@ -16,16 +16,16 @@ jobs:
       - run: 
           command: npm test
           working_directory: ./client
-serwer:
-  executor: node
-  steps:
-    - checkout
-    - run:
-      command: npm install
-      working_directory: ./server
-    - run: 
-      command: npm test
-      working_directory: ./server
+  serwer:
+    executor: node
+    steps:
+      - checkout
+      - run:
+        command: npm install
+       working_directory: ./server
+      - run: 
+        command: npm test
+        working_directory: ./server
 
 
 workflows:
