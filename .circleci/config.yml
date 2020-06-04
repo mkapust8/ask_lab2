@@ -1,31 +1,27 @@
 version: 2.1
-orbs:
-  docker: circleci/docker@1.2.1
+
+executors:
+  node:
+    docker:
+    - image: circleci/node:10
   
 jobs:
-  
   klient:
-    executor:
-      name: docker/docker
-    docker:
-      - image: circleci/node:10.16.3
+    executor: node
     steps:
       - checkout
       - run: 
-        command: node/install
+        command: npm install
         working_directory: ./client
       - run: 
         command: npm test
         working_directory: ./client
   serwer:
-    executor:
-      name: docker/docker
-    docker:
-      - image: circleci/node:10.16.3
+    executor: node
     steps:
       - checkout
       - run:
-        command: node/install
+        command: npm install
         working_directory: ./server
       - run: 
         command: npm test
