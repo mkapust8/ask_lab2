@@ -1,13 +1,11 @@
 version: 2.1
 
-executors:
-  node:
-    docker:
-    - image: circleci/node:10
+orbs:
+  node: circleci/node@2.1.0
   
 jobs:
   klient:
-    executor: node
+    executor: node/default
     steps:
       - checkout
       - run: 
@@ -17,7 +15,7 @@ jobs:
           command: npm test
           working_directory: ./client
   serwer:
-    executor: node
+    executor: node/default
     steps:
       - checkout
       - run:
