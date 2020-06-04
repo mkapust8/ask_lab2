@@ -32,5 +32,11 @@ workflows:
   versions: 2
   test:
     jobs:
-      - klient
-      - serwer
+      - serwer:
+        filters:
+          branches:
+            only: master
+      - klient:
+        filters:
+          branches:
+            only: master
