@@ -15,7 +15,7 @@ jobs:
           command: npm test
           working_directory: ./client
   serwer:
-    executor: node/default
+    executor: node/default 
     steps:
       - checkout
       - run:
