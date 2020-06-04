@@ -8,12 +8,12 @@ jobs:
       name: docker/docker
     docker:
       - image: circleci/node:10.16.3
-    working_directory: client
     steps:
       - checkout
       - run: 
-        node/install
-        npm test
+        working_directory: client
+      - node/install
+      - npm test
   serwer:
     executor:
       name: docker/docker
@@ -23,8 +23,8 @@ jobs:
       - checkout
       - run:
         working_directory: server
-        node/install
-        npm test
+      - node/install
+      - npm test
 
 
 workflows:
